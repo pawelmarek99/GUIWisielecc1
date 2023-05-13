@@ -12,13 +12,13 @@ class MainWindow:
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.main_win)
 
-        # przypisanie zmiennych
+        # przypisanie zmiennych startowych
         self.db = Datastore()
         self.word = ""
         self.guessed_word = []
         self.misses = 0
 
-        # start okna z przypisanymi zmiennymi
+        # start okna z funkcjami
         self.choose_word()
         self.display_guesses()
         self.display_gallow()
@@ -49,6 +49,7 @@ class MainWindow:
         self.ui.gallow_lb.setPixmap(gallow)
 
     def set_button_enabled(self,val):
+        # reset lub wylaczenie przyciskow
         self.ui.a_btn.setEnabled(val)
         self.ui.ą_btn.setEnabled(val)
         self.ui.b_btn.setEnabled(val)
